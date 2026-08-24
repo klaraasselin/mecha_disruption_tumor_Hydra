@@ -38,7 +38,8 @@ df <-
       factor(treatment),
       "Control" = "Sleep",
       "Control" = "sleep",
-      "Sleep deprivation" = "sleep_deprivation"),
+      "Mechanical sleep disruption" = "sleep_deprivation",
+      "Mechanical sleep disruption" = "Sleep deprivation"),
     
     #' Homogenize lineages names 
     lineage = recode(
@@ -83,7 +84,7 @@ df <-
 
 sleep_condition_colors <- c(
   "Control" = "cyan",          
-  "Sleep deprivation" = "orange")
+  "Mechanical sleep disruption" = "orange")
 
 tum_colors <- c(
   "Healthy"  = "green", 

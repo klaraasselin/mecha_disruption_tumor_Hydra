@@ -23,7 +23,7 @@
 
 #+ include=FALSE, warning=FALSE, message=FALSE, results='hide'
 
-knitr::opts_knit$set(root.dir = "~/Library/Mobile Documents/com~apple~CloudDocs/Documents/these/travail/3_annexes/ix_sommeil/260820/")
+knitr::opts_knit$set(root.dir = "~/Library/Mobile Documents/com~apple~CloudDocs/Documents/these/travail/3_annexes/ix_sommeil/260824_CB/")
 
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, 
                       fig.width = 17, fig.height = 10)
@@ -80,7 +80,7 @@ tum_df <-
   
   #' Set factor levels for later use in the plots.
   mutate(sleep_condition = factor(sleep_condition, 
-                                  levels = c("Control", "Sleep deprivation"))) %>%
+                                  levels = c("Control", "Mechanical sleep disruption"))) %>%
   
   #' Keep only the variables needed for the analysis.
   select(age_followup, tum_event, status_competing, sleep_condition, 
@@ -440,8 +440,8 @@ scale_x <- scale_x_continuous(limits = c(0, 6), breaks = seq(0, 6, by = 2))
 
 #' Color scales for sleep condition
 sleep_scale <- list(
-  scale_color_manual(values = sleep_condition_colors, breaks = c("Control", "Sleep deprivation")),
-  scale_fill_manual(values = sleep_condition_colors, breaks = c("Control", "Sleep deprivation")))
+  scale_color_manual(values = sleep_condition_colors, breaks = c("Control", "Mechanical sleep disruption")),
+  scale_fill_manual(values = sleep_condition_colors, breaks = c("Control", "Mechanical sleep disruption")))
 
 #' Theme shared by all panels (angle = 90 for bottom-to-top reading)
 theme_common <- theme(

@@ -23,7 +23,7 @@
 
 #+ include=FALSE, warning=FALSE, message=FALSE, results='hide'
 
-knitr::opts_knit$set(root.dir = "~/Library/Mobile Documents/com~apple~CloudDocs/Documents/these/travail/3_annexes/ix_sommeil/260820/")
+knitr::opts_knit$set(root.dir = "~/Library/Mobile Documents/com~apple~CloudDocs/Documents/these/travail/3_annexes/ix_sommeil/260824_CB/")
 
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, 
                       fig.width = 17, fig.height = 10)
@@ -545,8 +545,8 @@ tum_scale <- list(
 
 #' Color scales for sleep condition
 sleep_scale <- list(
-  scale_color_manual(values = sleep_condition_colors, breaks = c("Control", "Sleep deprivation")),
-  scale_fill_manual(values = sleep_condition_colors, breaks = c("Control", "Sleep deprivation")))
+  scale_color_manual(values = sleep_condition_colors, breaks = c("Control", "Mechanical sleep disruption")),
+  scale_fill_manual(values = sleep_condition_colors, breaks = c("Control", "Mechanical sleep disruption")))
 
 #' Theme shared by panels A, B, and C (angle = 90 for bottom-to-top reading)
 theme_common <- theme(
@@ -565,7 +565,7 @@ labs_xy     <- labs(x = "Time (weeks)", y = "Cumulative incidence of\nfirst bud 
 #' ### HO_SPT
 A1 <- cuminc(Surv(age_followup, factor(status_competing)) ~ sleep_condition, 
              data = FB_df %>% filter(lineage == "HO_SPT") %>%
-               mutate(sleep_condition = factor(sleep_condition, levels = c("Control", "Sleep deprivation")))) %>%
+               mutate(sleep_condition = factor(sleep_condition, levels = c("Control", "Mechanical sleep disruption")))) %>%
   ggcuminc(outcome = "1") +
   add_confidence_interval() +
   labs_base + scale_y + scale_x + sleep_scale +
@@ -578,7 +578,7 @@ A1 <- cuminc(Surv(age_followup, factor(status_competing)) ~ sleep_condition,
 #' ### HO_VLN
 A2 <- cuminc(Surv(age_followup, factor(status_competing)) ~ sleep_condition, 
              data = FB_df %>% filter(lineage == "HO_VLN") %>%
-               mutate(sleep_condition = factor(sleep_condition, levels = c("Control", "Sleep deprivation")))) %>%
+               mutate(sleep_condition = factor(sleep_condition, levels = c("Control", "Mechanical sleep disruption")))) %>%
   ggcuminc(outcome = "1") +
   add_confidence_interval() +
   labs_x_only + scale_y + scale_x + sleep_scale +
@@ -591,7 +591,7 @@ A2 <- cuminc(Surv(age_followup, factor(status_competing)) ~ sleep_condition,
 #' ### HC_MT
 A3 <- cuminc(Surv(age_followup, factor(status_competing)) ~ sleep_condition, 
              data = FB_df %>% filter(lineage == "HC_MT") %>%
-               mutate(sleep_condition = factor(sleep_condition, levels = c("Control", "Sleep deprivation")))) %>%
+               mutate(sleep_condition = factor(sleep_condition, levels = c("Control", "Mechanical sleep disruption")))) %>%
   ggcuminc(outcome = "1") +
   add_confidence_interval() +
   labs_y_only + scale_y + scale_x + sleep_scale +
