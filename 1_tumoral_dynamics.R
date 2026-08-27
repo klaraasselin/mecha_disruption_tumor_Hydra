@@ -489,8 +489,8 @@ B1 <- cuminc(Surv(age_followup, factor(status_competing)) ~ sleep_condition,
   labs_base + scale_y + scale_x + sleep_scale +
   theme_bw() + theme_common + hide_y +
   theme(legend.position = "none") +
-  annotate("text", x = 0.2, y = 0.95, label = "HO_MT",
-           color = "black", fontface = "bold", size = 5, hjust = 0, vjust = 1)
+  annotate("text", x = 0.2, y = 0.95, label = expression(bolditalic("Ho") * bold("_MT")),
+           color = "black", size = 5, hjust = 0, vjust = 1)
 
 #' ### HO_SPC
 
@@ -502,8 +502,8 @@ B2 <- cuminc(Surv(age_followup, factor(status_competing)) ~ sleep_condition,
   labs_x_only + scale_y + scale_x + sleep_scale + 
   theme_bw() + theme_common + hide_y +
   theme(legend.position = "none") +
-  annotate("text", x = 0.2, y = 0.95, label = "HO_SPC",
-           color = "black", fontface = "bold", size = 5, hjust = 0, vjust = 1)
+  annotate("text", x = 0.2, y = 0.95, label = expression(bolditalic("Ho") * bold("_SPC")),
+           color = "black", size = 5, hjust = 0, vjust = 1)
 
 #' ### HO_SPT
 
@@ -515,8 +515,8 @@ B3 <- cuminc(Surv(age_followup, factor(status_competing)) ~ sleep_condition,
   labs_y_only + scale_y + scale_x + sleep_scale +
   theme_bw() + theme_common + show_y +
   theme(legend.position = "none") +
-  annotate("text", x = 0.2, y = 0.95, label = "HO_SPT",
-           color = "black", fontface = "bold", size = 5, hjust = 0, vjust = 1)
+  annotate("text", x = 0.2, y = 0.95, label = expression(bolditalic("Ho") * bold("_SPT")),
+           color = "black", size = 5, hjust = 0, vjust = 1)
 
 #' Create panel B combining plots B1, B2, and B3
 B <- (B1 + B2 + B3 + plot_layout(nrow = 1)) +
@@ -535,8 +535,8 @@ C1 <- cuminc(Surv(age_followup, factor(status_competing)) ~ 1,
   add_confidence_interval() +
   labs_base + scale_y + scale_x +
   theme_bw() + theme_common + hide_y +
-  annotate("text", x = 0.2, y = 0.95, label = "HO_MT",
-           color = "black", fontface = "bold", size = 5, hjust = 0, vjust = 1)
+  annotate("text", x = 0.2, y = 0.95, label = expression(bolditalic("Ho") * bold("_MT")),
+           color = "black", size = 5, hjust = 0, vjust = 1)
 
 #' ### HO_SPC
 
@@ -547,8 +547,8 @@ C2 <- cuminc(Surv(age_followup, factor(status_competing)) ~ 1,
   add_confidence_interval() +
   labs_x_only + scale_y + scale_x +
   theme_bw() + theme_common + hide_y +
-  annotate("text", x = 0.2, y = 0.95, label = "HO_SPC",
-           color = "black", fontface = "bold", size = 5, hjust = 0, vjust = 1)
+  annotate("text", x = 0.2, y = 0.95, label = expression(bolditalic("Ho") * bold("_SPC")),
+           color = "black", size = 5, hjust = 0, vjust = 1)
 
 #' ### HO_SPT
 
@@ -559,8 +559,8 @@ C3 <- cuminc(Surv(age_followup, factor(status_competing)) ~ 1,
   add_confidence_interval() +
   labs_y_only + scale_y + scale_x +
   theme_bw() + theme_common + show_y +
-  annotate("text", x = 0.2, y = 0.95, label = "HO_SPT",
-           color = "black", fontface = "bold", size = 5, hjust = 0, vjust = 1)
+  annotate("text", x = 0.2, y = 0.95, label = expression(bolditalic("Ho") * bold("_SPT")),
+           color = "black", size = 5, hjust = 0, vjust = 1)
 
 #' Create panel C combining plots C1, C2, and C3
 C <- (C1 + C2 + C3 + plot_layout(nrow = 1)) +

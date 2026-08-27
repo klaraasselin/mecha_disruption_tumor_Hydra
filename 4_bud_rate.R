@@ -211,6 +211,10 @@ buds_emmeans$x <- round(buds_emmeans$x)
 #' by sleep condition.
 buds_plot_treatment <- function(lineage, show_y_text = FALSE, show_x_text = TRUE, show_y_title = FALSE, show_x_title = FALSE) {
   data_sub <- subset(buds_emmeans, facet == lineage)
+
+  prefix <- sub("_.*", "", lineage)
+  prefix_format <- paste0(substr(prefix, 1, 1), tolower(substr(prefix, 2, nchar(prefix))))
+  label_expr <- parse(text = paste0("bolditalic('", prefix_format, "') * bold('", sub(".*_", "_", lineage), "')"))
   
   ggplot(data_sub, aes(x = x, y = predicted, color = group, fill = group)) +
     geom_line(linewidth = 0.8) +
@@ -233,8 +237,8 @@ buds_plot_treatment <- function(lineage, show_y_text = FALSE, show_x_text = TRUE
     coord_cartesian(ylim = c(0, 3.5)) +
     scale_color_manual(values = sleep_condition_colors) +
     scale_fill_manual(values = sleep_condition_colors) +
-    annotate("text", x = 1.2, y = 3.3, label = lineage, 
-             color = "black", fontface = "bold", size = 5, hjust = 0, vjust = 1)}
+    annotate("text", x = 1.2, y = 3.3, label = label_expr, 
+             color = "black", size = 5, hjust = 0, vjust = 1) }
 
 #' Function to plot, for a single lineage, the predicted weekly bud production 
 #' pooled across sleep conditions.
@@ -242,6 +246,10 @@ buds_plot_lineage <- function(lineage, show_y_text = FALSE, show_x_text = TRUE, 
   data_sub <- subset(buds_emmeans, facet == lineage)
   data_lineage <- aggregate(cbind(predicted, conf.low, conf.high) ~ x, data = data_sub, FUN = mean)
   data_lineage <- data_lineage[order(data_lineage$x), ]
+  
+  prefix <- sub("_.*", "", lineage)
+  prefix_format <- paste0(substr(prefix, 1, 1), tolower(substr(prefix, 2, nchar(prefix))))
+  label_expr <- parse(text = paste0("bolditalic('", prefix_format, "') * bold('", sub(".*_", "_", lineage), "')"))
   
   ggplot(data_lineage, aes(x = x, y = predicted)) +
     geom_line(linewidth = 0.8, color = "black") +
@@ -261,8 +269,8 @@ buds_plot_lineage <- function(lineage, show_y_text = FALSE, show_x_text = TRUE, 
     scale_x_continuous(limits = c(1, 6), breaks = c(2, 4, 6)) +
     scale_y_continuous(position = "right") +
     coord_cartesian(ylim = c(0, 3.5)) +
-    annotate("text", x = 1.2, y = 3.3, label = lineage, 
-             color = "black", fontface = "bold", size = 5, hjust = 0, vjust = 1) }
+    annotate("text", x = 1.2, y = 3.3, label = label_expr, 
+             color = "black", size = 5, hjust = 0, vjust = 1) }
 
 #' ## Panel A: interaction between sleep condition and lineage
 
@@ -326,5 +334,5 @@ final_buds_panel <- cowplot::plot_grid(interaction_title_grob,
 #' Show the final figure.
 print(final_buds_panel)
 
-ggsave("figure_4.png", plot = final_buds_panel, width = 21, height = 29.7, units = "cm", dpi = 300)
+ggsave("figure_5.png", plot = final_buds_panel, width = 21, height = 29.7, units = "cm", dpi = 300)
 

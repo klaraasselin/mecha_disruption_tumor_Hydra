@@ -572,8 +572,8 @@ A1 <- cuminc(Surv(age_followup, factor(status_competing)) ~ sleep_condition,
   theme_bw() + theme_common + hide_y +
   theme(axis.text.x = element_text(color = "black", size = 14),
         legend.position = "none") +
-  annotate("text", x = 5.8, y = 0.05, label = "HO_SPT",
-           color = "black", fontface = "bold", size = 5, hjust = 1, vjust = 0)
+  annotate("text", x = 5.8, y = 0.05, label = expression(bolditalic("Ho") * bold("_SPT")),
+           color = "black", size = 5, hjust = 1, vjust = 0)
 
 #' ### HO_VLN
 A2 <- cuminc(Surv(age_followup, factor(status_competing)) ~ sleep_condition, 
@@ -585,8 +585,8 @@ A2 <- cuminc(Surv(age_followup, factor(status_competing)) ~ sleep_condition,
   theme_bw() + theme_common + hide_y +
   theme(axis.text.x = element_text(color = "black", size = 14),
         legend.position = "none") +
-  annotate("text", x = 5.8, y = 0.05, label = "HO_VLN",
-           color = "black", fontface = "bold", size = 5, hjust = 1, vjust = 0)
+  annotate("text", x = 5.8, y = 0.05, label = expression(bolditalic("Ho") * bold("_VLN")),
+           color = "black", size = 5, hjust = 1, vjust = 0)
 
 #' ### HC_MT
 A3 <- cuminc(Surv(age_followup, factor(status_competing)) ~ sleep_condition, 
@@ -598,8 +598,8 @@ A3 <- cuminc(Surv(age_followup, factor(status_competing)) ~ sleep_condition,
   theme_bw() + theme_common + show_y +
   theme(axis.text.x = element_text(color = "black", size = 14),
         legend.position = "none") +
-  annotate("text", x = 5.8, y = 0.05, label = "HC_MT",
-           color = "black", fontface = "bold", size = 5, hjust = 1, vjust = 0)
+  annotate("text", x = 5.8, y = 0.05, label = expression(bolditalic("Hc") * bold("_MT")),
+           color = "black", size = 5, hjust = 1, vjust = 0)
 
 #' Extract legend from the plot A3
 shared_treatment_legend <- cowplot::get_legend(
@@ -644,8 +644,8 @@ C1 <- cuminc(Surv(age_followup, factor(status_competing)) ~ 1,
   add_confidence_interval() +
   labs_base + scale_y + scale_x +
   theme_bw() + theme_common + hide_y + hide_x +
-  annotate("text", x = 5.8, y = 0.05, label = "HO_MT",
-           color = "black", fontface = "bold", size = 5, hjust = 1, vjust = 0)
+  annotate("text", x = 5.8, y = 0.05, label = expression(bolditalic("Ho") * bold("_MT")),
+           color = "black", size = 5, hjust = 1, vjust = 0)
 
 #' ### HO_SPC
 C2 <- cuminc(Surv(age_followup, factor(status_competing)) ~ 1, 
@@ -654,8 +654,8 @@ C2 <- cuminc(Surv(age_followup, factor(status_competing)) ~ 1,
   add_confidence_interval() +
   labs_base + scale_y + scale_x +
   theme_bw() + theme_common + hide_y + hide_x +
-  annotate("text", x = 5.8, y = 0.05, label = "HO_SPC",
-           color = "black", fontface = "bold", size = 5, hjust = 1, vjust = 0)
+  annotate("text", x = 5.8, y = 0.05, label = expression(bolditalic("Ho") * bold("_SPC")),
+           color = "black", size = 5, hjust = 1, vjust = 0)
 
 #' ### HO_SPT
 C3 <- cuminc(Surv(age_followup, factor(status_competing)) ~ 1, 
@@ -666,8 +666,8 @@ C3 <- cuminc(Surv(age_followup, factor(status_competing)) ~ 1,
   theme_bw() + theme_common + hide_y + hide_x + 
   theme(axis.text.y.right = element_text(color = "black", size = 14), 
         axis.ticks.y.right = element_line()) +
-  annotate("text", x = 5.8, y = 0.05, label = "HO_SPT",
-           color = "black", fontface = "bold", size = 5, hjust = 1, vjust = 0)
+  annotate("text", x = 5.8, y = 0.05, label = expression(bolditalic("Ho") * bold("_SPT")),
+           color = "black", size = 5, hjust = 1, vjust = 0)
 
 #' ### HO_VLN
 C4 <- cuminc(Surv(age_followup, factor(status_competing)) ~ 1, 
@@ -676,8 +676,8 @@ C4 <- cuminc(Surv(age_followup, factor(status_competing)) ~ 1,
   add_confidence_interval() +
   labs_base + scale_y + scale_x +
   theme_bw() + theme_common + hide_y + show_x +
-  annotate("text", x = 5.8, y = 0.05, label = "HO_VLN",
-           color = "black", fontface = "bold", size = 5, hjust = 1, vjust = 0)
+  annotate("text", x = 5.8, y = 0.05, label = expression(bolditalic("Ho") * bold("_VLN")),
+           color = "black", size = 5, hjust = 1, vjust = 0)
 
 #' ### HC_MT
 C5 <- cuminc(Surv(age_followup, factor(status_competing)) ~ 1, 
@@ -686,8 +686,8 @@ C5 <- cuminc(Surv(age_followup, factor(status_competing)) ~ 1,
   add_confidence_interval() +
   labs_x_only + scale_y + scale_x +
   theme_bw() + theme_common + hide_y + show_x +
-  annotate("text", x = 5.8, y = 0.05, label = "HC_MT",
-           color = "black", fontface = "bold", size = 5, hjust = 1, vjust = 0)
+  annotate("text", x = 5.8, y = 0.05, label = expression(bolditalic("Hc") * bold("_MT")),
+           color = "black", size = 5, hjust = 1, vjust = 0)
 
 #' ### HV_GAL
 C6 <- cuminc(Surv(age_followup, factor(status_competing)) ~ 1, 
@@ -696,8 +696,8 @@ C6 <- cuminc(Surv(age_followup, factor(status_competing)) ~ 1,
   add_confidence_interval() +
   labs_y_only + scale_y + scale_x +
   theme_bw() + theme_common + show_y + show_x +
-  annotate("text", x = 5.8, y = 0.05, label = "HV_GAL",
-           color = "black", fontface = "bold", size = 5, hjust = 1, vjust = 0)
+  annotate("text", x = 5.8, y = 0.05, label = expression(bolditalic("Hv") * bold("_GAL")),
+           color = "black", size = 5, hjust = 1, vjust = 0)
 
 #' Create panel C combining plots C1 to C6.
 C <- (C1 + C2 + C3) / (C4 + C5 + C6) + 
@@ -734,4 +734,4 @@ final_FB_panel <- cowplot::plot_grid(A,
 #' Show the final figure.
 print(final_FB_panel)
 
-ggsave("figure_3.png", plot = final_FB_panel, width = 21, height = 29.7, units = "cm", dpi = 300)
+ggsave("figure_4.png", plot = final_FB_panel, width = 21, height = 29.7, units = "cm", dpi = 300)

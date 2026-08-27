@@ -271,7 +271,7 @@ print(tenta_proportions)
 
 #' # Plots of cumulative incidence of supernumerary tentacles development by tumoral state
 
-cuminc(Surv(age_followup, factor(status_competing)) ~ tum_state_early, 
+final_tenta_plot <- cuminc(Surv(age_followup, factor(status_competing)) ~ tum_state_early, 
        data = tenta_df) %>%
   ggcuminc(outcome = "1") +
   add_confidence_interval() +
@@ -295,3 +295,8 @@ cuminc(Surv(age_followup, factor(status_competing)) ~ tum_state_early,
                      position = "right") +
   scale_color_manual(values = tum_colors) +
   scale_fill_manual(values = tum_colors)
+
+#' Show the final figure.
+print(final_tenta_plot)
+
+ggsave("figure_3.png", plot = final_tenta_plot, width = 21, height = 10, units = "cm", dpi = 300)
