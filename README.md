@@ -1,7 +1,7 @@
 This repository contains the dataset and the codes used to perform the analyses in the following publication:
 Meliani J* & Asselin K*, Berriahi Z, Renard J, Tökölyi J, M. Nedelcu A, Thomas F† & M. Dujon A†. 2026 A mechanical disruption treatment reshapes tumor dynamics across Hydra lineages.
 
-* equal contributions † equal contributions
+\* equal contributions † equal contributions
 
 It also contains the output of the codes in PDF format. 
 
