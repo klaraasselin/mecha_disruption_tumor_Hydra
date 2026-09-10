@@ -1,5 +1,7 @@
 This repository contains the dataset and the codes used to perform the analyses in the following publication:
-Meliani J & Asselin K, Berriahi Z, Renard J, Tökölyi J, M. Nedelcu A, Thomas F & M. Dujon A. 2026 A sleep-disruption protocol elicits opposite tumor responses in Hydra.
+Meliani J* & Asselin K*, Berriahi Z, Renard J, Tökölyi J, M. Nedelcu A, Thomas F<img width="470" height="16" alt="image" src="https://github.com/user-attachments/assets/4118efef-6d44-427f-8a42-7f6106ce2d23" /> & M. Dujon A<img width="470" height="16" alt="image" src="https://github.com/user-attachments/assets/4118efef-6d44-427f-8a42-7f6106ce2d23" />. 2026 A mechanical disruption treatment reshapes tumor dynamics across Hydra lineages.
+
+* equal contributions <img width="470" height="16" alt="image" src="https://github.com/user-attachments/assets/4118efef-6d44-427f-8a42-7f6106ce2d23" /> equal contributions
 
 It also contains the output of the codes in PDF format. 
 
