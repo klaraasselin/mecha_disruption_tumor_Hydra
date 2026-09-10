@@ -43,10 +43,10 @@ source("0b_script_data.R")
 
 #' # Counts and cumulative proportions
 
-#' ## By lineage, tumoral status, and sleep condition
+#' ## By lineage, tumoral status, and rest condition
 
 df %>%
-  group_by(lineage, tum_state, sleep_condition) %>%
+  group_by(lineage, tum_state, rest_condition) %>%
   summarise(
     n_total = n(),
     n_dead = sum(death_state, na.rm = TRUE),
@@ -63,20 +63,20 @@ df %>%
     prop = round(n_dead / n_total * 100, 2),
     .groups = "drop")
 
-#' ## By lineage and sleep condition
+#' ## By lineage and rest condition
 
 df %>%
-  group_by(lineage, sleep_condition) %>%
+  group_by(lineage, rest_condition) %>%
   summarise(
     n_total = n(),
     n_dead = sum(death_state, na.rm = TRUE),
     prop = round(n_dead / n_total * 100, 2),
     .groups = "drop")
 
-#' ## By tumoral status and sleep condition
+#' ## By tumoral status and rest condition
 
 df %>%
-  group_by(tum_state, sleep_condition) %>%
+  group_by(tum_state, rest_condition) %>%
   summarise(
     n_total = n(),
     n_dead = sum(death_state, na.rm = TRUE),
@@ -103,10 +103,10 @@ df %>%
     prop = round(n_dead / n_total * 100, 2),
     .groups = "drop")
 
-#' ## By sleep condition
+#' ## By rest condition
 
 df %>%
-  group_by(sleep_condition) %>%
+  group_by(rest_condition) %>%
   summarise(
     n_total = n(),
     n_dead = sum(death_state, na.rm = TRUE),
